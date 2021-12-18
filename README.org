@@ -81,3 +81,8 @@
       5. 以关键字 ~{city}妆{year}{num}~ 为关键字进行查询, num 从 00开始遍历,到99结束,
          实际上是肯定没有这么多的,所以要记录一个总数,当总数等于第四步记录的
          result["totalCount"] 时,退出 num 的遍历,反之则进行第三步.
+    6. 功能实现: [[file:scxk_nmpa_final.py::import requests][scxk_nmpa_final.py]]
+       之前没想到直接估算每条数据大小,用了 psutil 模块去估算程序运行时占用内存大
+       小,现在发现所有数据加起来也没多大(使用 ~os.sizeof()~ 就可以看到一条详情数据
+       占用字节大小),就没有继续使用了,下次再想使用这个功能就去 [[file:scxk_refactor.py::print(u'当前占用:%.4f GB' %][scxk_refactor.py]]
+       里看看使用例子.
